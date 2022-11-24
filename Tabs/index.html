@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <title>Tabs</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="tabs">
+      <h3 class="active">Tab 1</h3>
+      <h3>Tab 2</h3>
+      <h3>Tab 3</h3>
+    </div>
+    <div class="tab-content">
+      <div class="active">
+        <h4>First Title</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati nobis ducimus modi. Quia quidem molestiae
+          deserunt earum. Quas hic accusamus tempore neque ut qui, dolores iste ex vel cupiditate aspernatur mollitia
+          dolore. Neque quam excepturi, at ullam laudantium nesciunt facilis, similique debitis cumque molestias animi?
+          Consequuntur aut minima consequatur maiores!</p>
+      </div>
+
+      <div>
+        <h4>Second Title</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam nam minima cumque facere obcaecati eligendi
+          quo sed perspiciatis, adipisci aperiam explicabo dignissimos placeat ut. Minima debitis nihil delectus
+          voluptatem placeat omnis est, rem harum eaque non, tempora dolores sit exercitationem voluptas dolore! Quaerat
+          necessitatibus obcaecati, magnam vel numquam commodi dicta.</p>
+      </div>
+
+      <div>
+        <h4>Third Title</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere mollitia asperiores distinctio dolor tempora
+          unde illum sapiente eligendi accusamus. Esse eos molestias nesciunt quam quia sit deserunt quod explicabo
+          doloremque? Alias amet fuga animi culpa soluta. Architecto est necessitatibus ex nemo dolore possimus eum sunt
+          iusto quisquam illum? Atque, eveniet?</p>
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript -->
+  <script>
+    let tabs = document.querySelectorAll(".tabs h3");
+    let tabContainer = document.querySelectorAll(".tab-content div");
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        tabContainer.forEach((content) => {
+          content.classList.remove("active");
+        });
+        tabs.forEach((tab) => {
+          tab.classList.remove("active")
+        });
+        tabContainer[index].classList.add("active");
+        tabs[index].classList.add("active");
+      });
+    });
+  </script>
+</body>
+
+</html>
